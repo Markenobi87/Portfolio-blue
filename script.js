@@ -31,3 +31,13 @@ window.onscroll = () => {
     // animation footer on scroll
 
 }
+
+
+
+
+const bottonSwitch = document.querySelector('#switch');
+
+bottonSwitch.addEventListener('click', () => {
+    document.body.classList.toggle('sun');
+    bottonSwitch.classList.toggle('active');
+})

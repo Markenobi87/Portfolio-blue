@@ -19,6 +19,10 @@ body{
     background-color: #091B2A;
 }
 
+body.sun{
+    background:white;
+}
+
 .header{
     position: fixed;
     top: 0;
@@ -30,7 +34,7 @@ body{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    transform: .3s;
+    transform: .1s;
 }
 
 
@@ -38,12 +42,61 @@ body{
     background: #091B2A;
 }
 
+body.sun .header{
+    background: #342640;
+}
 
 .logo{
     cursor: pointer;
     width: 90px;
    
 }
+
+/*para boton noche/dia*/
+
+.switch { 
+   background: #ffffff;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;}
+    
+    .switch::after{
+        content: "";
+        display: block;
+        width: 28px;
+        height: 27px;
+        position: absolute;
+        background:#f9fcfd;
+        top: 0;
+        left: 0;
+        right: unset;
+        transition: .3s ease all;
+        border-radius: 100px;
+        box-shadow: 0 0px 10px 2px rgb(122, 111, 111);
+    }
+
+     .switch.active{
+        background: rgb(215, 192, 232);
+        
+    }
+    .switch.active::after{
+        right: 0;
+        left: unset;
+    }
+
+/*span modo noche/dia*/
+   .a{
+    color: rgb(51, 32, 68);
+    width: 28px;
+    height: 27px;
+    line-height: 31px;
+    display: block;
+    background: none;
+}
+
 
 .logo:hover{
    border: 1px solid rgb(237, 232, 232);
@@ -64,9 +117,20 @@ body{
         color: rgb(59, 167, 220);
         
     }
+
+body.sun a.active{
+    color: #c59dee;
+}
+
+
     .navbar a.active:hover{
         text-shadow: 2px 2px 5px rgb(162, 236, 249);
     }
+
+    body.sun a.active:hover{
+        text-shadow: 2px 2px 5px rgb(58, 65, 67);
+    }
+
     .navbar .b{
         color: rgb(255, 255, 255);
     }
@@ -76,7 +140,9 @@ body{
        color: rgb(194, 131, 249);
     }
 
-
+    body.sun .b:hover{
+        color: #966CB8;
+    }
 
     #menu-icon {
         color: white;
@@ -84,7 +150,6 @@ body{
         cursor: pointer;
         display: none;
     }
-
 
     section{
         min-height: 100vh;
@@ -101,9 +166,16 @@ body{
           
     }
 
-   
+    body.sun .home{
+        display: flex;
+        align-items: center;
+        padding: 0 9%;
+        background: url(./assets/cartonlonglavandaclaro.jpg) no-repeat;
+        background-size: 65%;
+        background-position:75%;
+    }
 
-   
+
     .home-content{
         max-width: 60rem;
         z-index:99 ;
@@ -114,12 +186,17 @@ body{
         line-height: 1.5;
         color: aliceblue;
     }
+    
+    body.sun .home-content h1{
+        color: #966CB8;
+    }
 
 
     .home-content .text-animate{
         position: relative;
         width: 33.rem;
     }
+    
 
     .home-content .text-animate h3 {
         font-size: 3.2rem;
@@ -128,10 +205,21 @@ body{
         -webkit-text-stroke: .7px rgb(21, 182, 231);
     }
 
+
+    body.sun .text-animate h3{
+        color: transparent;
+        -webkit-text-stroke: 2px #966CB8;
+    }
+    
+
     .home-content p {
         font-size: 1.5rem;
         margin: 2rem 0 4rem;
         color: aliceblue;
+    }
+
+    body.sun .home-content p{
+        color: #342640;
     }
 
     .btn-box {
@@ -162,6 +250,26 @@ body{
     }
 
 
+
+    body.sun  .btn-box .btn{
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 15rem;
+        height: 100%;
+        background-color:transparent;
+        border: .2rem solid  #342640;;
+        border-radius: 15px;
+        font-size: medium;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        color: #342640;
+        z-index: 1;
+        overflow: hidden;
+
+    }
+
     .btn-box .btn::before {
         content: '';
         position: absolute;
@@ -175,8 +283,24 @@ body{
         
     }
 
+
+    body.sun  .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:0;
+        height: 100%;
+        background-color:rgb(87, 69, 102) ;
+        z-index: -1;
+        transition: .7s;}
+
    .btn:hover{ 
     color: #07233b;
+   }
+
+   body.sun .btn:hover{
+    color: #f9fcfd;
    }
     .btn-box .btn:hover::before{
         width: 100%;
@@ -205,9 +329,17 @@ body{
         color: white;
     }
 
+    body.sun .home-social a{
+        border: .2rem solid  #342640;
+        color: #19073b;
+    }
+
     .home-social a:hover{
         background-color: #c6cfd9;
         color: rgb(22, 22, 89);
+    }
+    body.sun  .home-social a:hover{
+        background: #cabadf;
     }
 
 
@@ -217,10 +349,12 @@ body{
     right:80px ;
     width: 40%;
     background: transparent;
-    border: 1px solid rgb(22, 52, 89);
+    border: 1px solid rgb(89, 44, 22);
 
    }
 
+
+   /*ABOUT-------------------*/
 
    .about{
     display: flex;
@@ -233,7 +367,22 @@ body{
     color: #c6cfd9;
    }
 
+   body.sun .about{
+    background-color: white;
+    color: #19073b;
+   }
+
+.heading2{
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+   }
+
+
+
    .heading{
+    color: rgb(255, 255, 255);
     font-size: 5rem;
     margin-bottom: 3rem;
     text-align: center;
@@ -241,6 +390,9 @@ body{
 
    span{
     color:  rgb(89, 195, 252);
+   }
+   body.sun  span{
+    color:  #342640;
    }
  /*los 3 siguientes ahcen el efecto marco redondo*/
    .about-img {
@@ -256,10 +408,20 @@ body{
    .about-img img{
     width: 90%;
     border-radius: 50%;
-    border: .2rem solid  rgb(92, 171, 213) ;
+    border: .2rem solid  rgb(239, 244, 247) ;
+   }
+   body.sun .about-img img{
+    border: .2rem solid  rgb(244, 243, 246)
    }
 
+   body.sun .about{
+    background: #342640;
+    color: white;
+   }
 
+   body.sun .spanblanco{
+    color: #cabadf;
+   }
    .about-img .circle-spin{
     position: absolute;
     top: 50%;
@@ -275,6 +437,14 @@ body{
    animation: aboutSpinner 16s linear infinite;
    }
 
+
+body.sun .about-img .circle-spin {
+    border-top:  .2rem solid white;
+    border-bottom:  .2rem solid white;
+    border-left: .2rem solid #342640;
+    border-right: .2rem solid #342640;
+    animation: aboutSpinner 16s linear infinite;
+}
 
    .about-content {
     text-align: center;
@@ -308,6 +478,8 @@ body{
 
  /*EDUCATION*/
 
+
+ 
    .education{
     letter-spacing: .1rem;
     color: aliceblue;
@@ -331,42 +503,79 @@ body{
 
    .hijo1{
     font-size: 1.5rem;
-     padding: 5rem ;
+     padding: 4rem ;
     margin: 10rem 1rem;
     padding-left: 2rem;
     border-left: .5rem solid rgb(92, 171, 213)  ;
     border-radius: 4rem;
-    margin-left: 15rem ;}
+    margin-left: 10rem ;}
     
     .hijo1:hover{
-        border-left: .5rem solid rgb(223, 236, 244)  ;
+        border-left: .5rem solid rgb(254, 254, 254) ;
     
    }
 
+   body.sun .heading2{
+    color: black;
+   }
+body.sun .titulo{
+    color: #091B2A;
+}
+
+
+
+   body.sun .hijo1{
+    color: #19073b;
+    border-left:.5rem solid  #966CB8;
+    background-color: #eae2f343;
+   }
+
+
+   body.sun .hijo1:hover{
+    border-left:.5rem solid  #3c2b4a;
+    background-color: #f3ecfb43;
+
+   }
 
    .hijo2{
     font-size: 1.5rem;
-    border-radius: 4rem;
-    padding: 5rem;
+     padding: 4rem;
     margin: 10rem 1rem;
     padding-left: 2rem;
     border-left: .5rem solid rgb(92, 171, 213)  ;
-    
+    border-radius: 4rem;
     
    }
-
    .hijo2:hover{
-    border-left: .5rem solid rgb(223, 236, 244)  ;
+    border-left: .5rem solid rgb(254, 254, 254) ;}
 
+
+   body.sun .hijo2 {
+    color: #19073b;
+    border-left:.5rem solid  #966CB8;
+    background-color: #f3ecfb43;
 }
+
+
+    body.sun .hijo2:hover{
+        border-left:.5rem solid  #3c2b4a;
+        background-color: #f8f5fc43;
+       }
 
 
    .year{
     color:#5CABD5;
    }
+body.sun .year {
+    color: #19073b;
+}
 
+/*SPAN journey y contact pink*/
+   body.sun span.pinky{
+color: #966CB8;
+   }
 
-   /*SKILLS*/
+   /*SKILLS*----------------*/
 
 .skills{
     color: aliceblue;
@@ -375,7 +584,9 @@ body{
     background-color:  #091B2A;;
 }
 
-
+body.sun .skills{
+    background-color: #342640;
+}
 
 .skills .skills-row {
     display: flex;
@@ -398,11 +609,18 @@ body{
 
 .skills-box .skills-content {
     position: relative;
-    border: .2rem solid #7cc8f1;
-
+    border: solid .2rem  #7cc8f1;
     border-radius: .7rem;
     padding: 3rem 5rem 3rem 5rem;
 }
+
+
+
+body.sun .skills-box .skills-content{
+    border: solid .2rem  #ffffff;
+}
+
+
 
 
 .skills-content .progress{
@@ -421,6 +639,12 @@ body{
 
 .skills-content .progress h3 span{
     color: #56a8d3;
+
+
+
+}
+body.sun .skills-content .progress h3 span{
+    color:white;
 }
 
 
@@ -433,12 +657,20 @@ body{
     margin: 1rem 0;
 }
 
+body.sun .skills-content .progress .bar{
+    border: .1rem solid #ffffff;
+}
+
 .skills-content .progress .bar span{
     display: block;
     height: 100%;
     border-radius: 2rem;
     background-color: #5CABD5;
     
+}
+
+body.sun .skills-content .progress .bar span{
+    background-color: white;
 }
 
 
@@ -477,7 +709,7 @@ body{
 
 
 
-/*CONTACT*/
+/*CONTACT--------*/
 
 
 .contact{
@@ -502,7 +734,7 @@ body{
 .contact form .input-box .input-field{
     position: relative;
     width: 49%;
-    margin:  .8rem 0;
+    margin: .8rem 0;
 }
 
 
@@ -518,10 +750,28 @@ body{
     border: .2rem solid #18a2ec ;
 }
 
+body.sun .contact form .input-box .input-field input{
+    color:#000000;
+    border: .3rem solid  #3c2b4a;
+    background-color: #eae2f343;
+}
+
+body.sun .contact form .textarea-field textarea{
+    color:#000000;
+    border: .3rem solid  #3c2b4a;
+    background-color: #eae2f343;
+}
 
 .contact form .input-box .input-field input::placeholder,
 .contact form .textarea-field textarea::placeholder{
     color: #ffffff80;
+}
+
+body.sun .contact form .textarea-field textarea::placeholder{
+    color: #6b3e9f80;
+}
+body.sun .contact form .input-box .input-field input::placeholder{
+    color: #6b3e9f80;
 }
 
 
@@ -535,6 +785,7 @@ body{
 
     .contact form .textarea-field textarea{
         resize: none;
+        color: #cabadf;
     }
     
 .btn-box.btns .btn {
@@ -545,17 +796,24 @@ body{
     color: #07233b;
 }
 
+body.sun .btn-box.btns .btn:hover{
+    color: white;
+}
 
 
-/*FOOTER*/
+/*FOOTER*---------------------*/
 .footer{
     color: #ffffff;
     justify-content: space-between;
     align-items: center;
     display: flex;
     padding: .5rem 9%;
-    background-color: #091B2A;
+    background-color:#072338;
 
+}
+
+body.sun .footer{
+    background:#342640;
 }
 
 .footer-iconTop a {
@@ -567,12 +825,20 @@ body{
     border-radius: .6rem;
 }
 
+body.sun .footer-iconTop a {
+    border: .2rem solid #ffffff;
+    color: rgb(255, 255, 255);
+}
+
 
 .footer-iconTop a:hover{
     background-color: #18a2ec;
     color: #07233b;
 }
 
+body.sun .footer-iconTop a:hover{
+    background-color: #c59dee;
+}
 
 /*BREAKINPOINTS*/
 
@@ -625,6 +891,7 @@ body{
         transition-delay: .15s;
      }
 
+     
 
      .navbar.active{
         left: 0;
