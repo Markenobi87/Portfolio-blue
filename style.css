@@ -23,6 +23,7 @@ body.sun{
     background:white;
 }
 
+/*HEADERR*/
 .header{
     position: fixed;
     top: 0;
@@ -249,8 +250,6 @@ body.sun a.active{
        
     }
 
-
-
     body.sun  .btn-box .btn{
         position: relative;
         display: inline-flex;
@@ -282,7 +281,6 @@ body.sun a.active{
         transition: .7s;
         
     }
-
 
     body.sun  .btn::before {
         content: '';
@@ -352,7 +350,6 @@ body.sun a.active{
     border: 1px solid rgb(89, 44, 22);
 
    }
-
 
    /*ABOUT-------------------*/
 
@@ -435,10 +432,9 @@ body.sun a.active{
    border-left: .2rem solid rgb(92, 171, 213);
    border-right: .2rem solid rgb(92, 171, 213);
    animation: aboutSpinner 16s linear infinite;
-   }
+   } 
 
-
-body.sun .about-img .circle-spin {
+    body.sun .about-img .circle-spin {
     border-top:  .2rem solid white;
     border-bottom:  .2rem solid white;
     border-left: .2rem solid #342640;
@@ -464,6 +460,58 @@ body.sun .about-img .circle-spin {
     display: inline-block;
     width: 14rem;
    }
+   .body.sun .btn-box.btns .btnes {
+    color: #c6cfd9;
+   }
+
+
+   .botonunico{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background-color:transparent;
+    border: .2rem solid rgb(26, 160, 233);
+    border-radius: 15px;
+    font-size: medium;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: rgb(240, 246, 249);
+    z-index: 1;
+    overflow: hidden;
+   
+}
+
+body.sun .botonunico{
+    border: .2rem solid rgb(255, 255, 255);
+}
+
+body.sun .botonunico:hover{
+    color: #19073b;
+}
+
+
+.botonunico::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:0;
+    height: 100%;
+    background-color:rgb(214, 182, 242) ;
+    z-index: -1;
+    transition: .6s;
+    
+}
+.botonunico:hover{ 
+    color: #e6edf3;
+   }
+
+   .botonunico:hover::before{
+    width: 100%;
+}
 
 
  .titulo{
@@ -615,12 +663,9 @@ body.sun .skills{
 }
 
 
-
 body.sun .skills-box .skills-content{
     border: solid .2rem  #ffffff;
 }
-
-
 
 
 .skills-content .progress{
@@ -633,20 +678,15 @@ body.sun .skills-box .skills-content{
     display: flex;
     justify-content: space-between;
    
-    
-}
-
+    }
 
 .skills-content .progress h3 span{
     color: #56a8d3;
-
-
 
 }
 body.sun .skills-content .progress h3 span{
     color:white;
 }
-
 
 
 .skills-content .progress .bar{
@@ -706,7 +746,6 @@ body.sun .skills-content .progress .bar span{
 .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span{
     width: 80%
 }
-
 
 
 /*CONTACT--------*/
@@ -782,7 +821,6 @@ body.sun .contact form .input-box .input-field input::placeholder{
     display: flex;}
 
 
-
     .contact form .textarea-field textarea{
         resize: none;
         color: #cabadf;
@@ -850,8 +888,6 @@ body.sun .footer-iconTop a:hover{
 }
 
 
-
-
 @media (max-width: 991px){
     .header{
         padding: 2rem 4%;
@@ -899,8 +935,6 @@ body.sun .footer-iconTop a:hover{
      }
 
      
-     
-
 
       .navbar a {
         display: block;
