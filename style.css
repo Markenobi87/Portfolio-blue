@@ -128,7 +128,7 @@ body.sun a.active{
     }
 
     body.sun a.active:hover{
-        text-shadow: 2px 2px 5px rgb(58, 65, 67);
+        text-shadow: 2px 2px 5px rgb(226, 230, 231);
     }
 
     .navbar .b{
